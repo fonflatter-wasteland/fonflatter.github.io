@@ -3,3 +3,6 @@ script: "bundle exec jekyll build"
 after_script:
   - find _site/
   - cat _site/2005/12/15/87-insekt-des-jahres/index.html
+branches:
+  only:
+    - gh-pages
