@@ -1,3 +1,338 @@
-<h2>{{ page.title }}</h2>
-<img src="http://www.fonflatter.de/2006/fred_2006-09-14_s.jpg" title="{{ page.mouseover }}" />
-{{ content }}
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="utf-8"/>
+
+	<title>{{ site.title }} - {{ page.title }}</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet"/>
+
+	<!-- Custom styles for this template -->
+	<link href="css/sticky-footer-navbar.css" rel="stylesheet"/>
+
+	<link href="css/jquery.socialshareprivacy.min.css" rel="stylesheet"/>
+</head>
+
+<body>
+
+<div class="row">
+	<div class="col-md-4 col-md-offset-4">
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="container-fluid">
+
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed"
+					        data-toggle="collapse"
+					        data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse"
+				     id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li><a href="#"><span
+								class="glyphicon glyphicon-shopping-cart"></span>
+							Fredshop</a></li>
+						<li><a href="#"><span
+								class="glyphicon glyphicon-gift"></span>
+							Geschenke</a></li>
+						<li><a href="#"><span
+								class="glyphicon glyphicon-envelope"></span>
+							Post</a></li>
+						<li class="dropdown" id="archive">
+							<a href="#" class="dropdown-toggle"
+							   data-toggle="dropdown"><span
+									class="glyphicon glyphicon-calendar"></span>
+								Archiv <span
+										class="caret"></span></a>
+
+							<div class="dropdown-menu" role="menu">
+								<table class="table table-condensed "
+								       style="text-align: center;">
+									<thead>
+									<tr>
+										<th colspan="3">
+											<a class="year-toggle"
+											   data-toggle="collapse"
+											   data-parent="#archive"
+											   data-target="#year_2014">2014</a>
+										</th>
+									</tr>
+									</thead>
+									<tbody id="year_2014" class="collapse">
+									<tr>
+										<td><a href="#">Januar</a></td>
+										<td><a href="#">Februar</a></td>
+										<td><a href="#">März</a></td>
+									</tr>
+									<tr>
+										<td><a href="#">April</a></td>
+										<td><a href="#">Mai</a></td>
+										<td><a href="#">Juni</a></td>
+									</tr>
+									<tr>
+										<td><a href="#">Juli</a></td>
+										<td><a href="#">August</a></td>
+										<td><a href="#">September</a></td>
+									</tr>
+									<tr>
+										<td><a href="#">Oktober</a></td>
+										<td><a href="#">November</a></td>
+										<td><a href="#">Dezember</a></td>
+									</tr>
+									</tbody>
+								</table>
+								<table class="table table-condensed "
+								       style="text-align: center;">
+									<thead>
+									<tr>
+										<th colspan="3">
+											<a class="year-toggle"
+											   data-toggle="collapse"
+											   data-parent="#archive"
+											   data-target="#year_2013">2013</a>
+										</th>
+									</tr>
+									</thead>
+									<tbody id="year_2013" class="collapse">
+									<tr>
+										<td><a href="#">Januar</a></td>
+										<td><a href="#">Februar</a></td>
+										<td><a href="#">März</a></td>
+									</tr>
+									<tr>
+										<td><a href="#">April</a></td>
+										<td><a href="#">Mai</a></td>
+										<td><a href="#">Juni</a></td>
+									</tr>
+									<tr>
+										<td><a href="#">Juli</a></td>
+										<td><a href="#">August</a></td>
+										<td><a href="#">September</a></td>
+									</tr>
+									<tr>
+										<td><a href="#">Oktober</a></td>
+										<td><a href="#">November</a></td>
+										<td><a href="#">Dezember</a></td>
+									</tr>
+									</tbody>
+								</table>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<!-- /.navbar-collapse -->
+			</div>
+			<!-- /.container-fluid -->
+		</nav>
+
+		<div class="page-header">
+			<h1>{{ page.title }}</h1>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-offset-3 col-md-1">
+		<div class="panel-group" id="accordion">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion"
+						   href="#collapseOne">
+							2014
+						</a>
+					</h4>
+				</div>
+				<div id="collapseOne" class="panel-collapse collapse">
+					<div class="panel-body btn-group-vertical">
+
+						<a class="btn btn-default" href="#">Januar</a>
+						<a class="btn btn-default" href="#">Februar</a>
+						<a class="btn btn-default" href="#">März</a>
+						<a class="btn btn-default" href="#">April</a>
+						<a class="btn btn-default" href="#">Mai</a>
+						<a class="btn btn-default" href="#">Juni</a>
+						<a class="btn btn-default" href="#">Juli</a>
+						<a class="btn btn-default" href="#">August</a>
+						<a class="btn btn-default" href="#">September</a>
+						<a class="btn btn-default" href="#">Oktober</a>
+						<a class="btn btn-default" href="#">November</a>
+						<a class="btn btn-default" href="#">Dezember</a></div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion"
+						   href="#collapseTwo">
+							2013
+						</a>
+					</h4>
+				</div>
+				<div id="collapseTwo" class="panel-collapse collapse">
+
+					<ul class="panel-body nav nav-pills small">
+
+						<li><a href="#">Januar</a></li>
+						<li><a href="#">Februar</a></li>
+						<li><a href="#">März</a></li>
+						<li><a href="#">April</a></li>
+						<li><a href="#">Mai</a></li>
+						<li><a href="#">Juni</a></li>
+						<li><a href="#">Juli</a></li>
+						<li><a href="#">August</a></li>
+						<li><a href="#">September</a></li>
+						<li><a href="#">Oktober</a></li>
+						<li><a href="#">November</a></li>
+						<li><a href="#">Dezember</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion"
+						   href="#collapseThree">
+							2012
+						</a>
+					</h4>
+				</div>
+				<div id="collapseThree" class="panel-collapse collapse">
+
+					<ul class="panel-body list-group">
+						<li class="list-group-item"><a href="#">Januar</a></li>
+						<li class="list-group-item"><a href="#">Februar</a></li>
+						<li class="list-group-item"><a href="#">März</a></li>
+						<li class="list-group-item"><a href="#">April</a></li>
+						<li class="list-group-item"><a href="#">Mai</a></li>
+						<li class="list-group-item"><a href="#">Juni</a></li>
+						<li class="list-group-item"><a href="#">Juli</a></li>
+						<li class="list-group-item"><a href="#">August</a></li>
+						<li class="list-group-item"><a href="#">September</a>
+						</li>
+						<li class="list-group-item"><a href="#">Oktober</a></li>
+						<li class="list-group-item"><a href="#">November</a>
+						</li>
+						<li class="list-group-item"><a href="#">Dezember</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+
+	<div class="col-md-offset-0 col-md-4">
+
+		<!-- Begin page content -->
+		<div class="container">
+			<img src="http://www.fonflatter.de/2006/fred_2006-09-14_s.jpg" title="{{ page.mouseover }}" />
+			{{ content }}
+			<div class="share"></div>
+		</div>
+
+	</div>
+
+	<form class="col-md-2" role="search">
+		<div class="form-group">
+			<input type="text" class="form-control"
+			       placeholder="Search">
+		</div>
+		<button type="submit" class="btn btn-default">Submit
+		</button>
+	</form>
+</div>
+
+<div class="row">
+
+	<div class="col-md-offset-2 col-md-2">
+		<div class="panel-group" id="accordion2">
+
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion2"
+						   href="#collapseFour">
+							2011
+						</a>
+					</h4>
+				</div>
+				<div id="collapseFour" class="panel-collapse collapse">
+					<table class="panel-body table table-condensed small"
+					       style="text-align: center;">
+						<tr>
+							<td><a href="#">Januar</a></td>
+							<td><a href="#">Februar</a></td>
+							<td><a href="#">März</a></td>
+						</tr>
+						<tr>
+							<td><a href="#">April</a></td>
+							<td><a href="#">Mai</a></td>
+							<td><a href="#">Juni</a></td>
+						</tr>
+						<tr>
+							<td><a href="#">Juli</a></td>
+							<td><a href="#">August</a></td>
+							<td><a href="#">September</a></td>
+						</tr>
+						<tr>
+							<td><a href="#">Oktober</a></td>
+							<td><a href="#">November</a></td>
+							<td><a href="#">Dezember</a></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="col-md-4">
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="container-fluid">
+				<ul class="nav navbar-nav">
+					<li><a href="#"><span
+							class="glyphicon glyphicon-shopping-cart"></span>
+						Fredshop</a></li>
+					<li><a href="#"><span
+							class="glyphicon glyphicon-gift"></span>
+						Geschenke</a></li>
+					<li><a href="#"><span
+							class="glyphicon glyphicon-envelope"></span>
+						Post</a></li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+</div>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript"
+        src="js/jquery.socialshareprivacy.min.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function () {
+		$('.share').socialSharePrivacy();
+	});
+
+	$(".year-toggle").mouseover(function () {
+		var target;
+		target = $(this).data('target');
+		$(target).collapse('show');
+	});
+</script>
+
+</body>
+</html>
