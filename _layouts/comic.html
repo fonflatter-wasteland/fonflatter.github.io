@@ -6,12 +6,12 @@
 	<title>{{ site.title }} - {{ page.title }}</title>
 
 	<!-- Bootstrap core CSS -->
-	<link href="css/bootstrap.min.css" rel="stylesheet"/>
+	<link href="/css/bootstrap.min.css" rel="stylesheet"/>
+
+	<link href="/css/jquery.socialshareprivacy.min.css" rel="stylesheet"/>
 
 	<!-- Custom styles for this template -->
-	<link href="css/sticky-footer-navbar.css" rel="stylesheet"/>
-
-	<link href="css/jquery.socialshareprivacy.min.css" rel="stylesheet"/>
+	<link href="/css/comic.css" rel="stylesheet"/>
 </head>
 
 <body>
@@ -46,86 +46,6 @@
 						<li><a href="#"><span
 								class="glyphicon glyphicon-envelope"></span>
 							Post</a></li>
-						<li class="dropdown" id="archive">
-							<a href="#" class="dropdown-toggle"
-							   data-toggle="dropdown"><span
-									class="glyphicon glyphicon-calendar"></span>
-								Archiv <span
-										class="caret"></span></a>
-
-							<div class="dropdown-menu" role="menu">
-								<table class="table table-condensed "
-								       style="text-align: center;">
-									<thead>
-									<tr>
-										<th colspan="3">
-											<a class="year-toggle"
-											   data-toggle="collapse"
-											   data-parent="#archive"
-											   data-target="#year_2014">2014</a>
-										</th>
-									</tr>
-									</thead>
-									<tbody id="year_2014" class="collapse">
-									<tr>
-										<td><a href="#">Januar</a></td>
-										<td><a href="#">Februar</a></td>
-										<td><a href="#">März</a></td>
-									</tr>
-									<tr>
-										<td><a href="#">April</a></td>
-										<td><a href="#">Mai</a></td>
-										<td><a href="#">Juni</a></td>
-									</tr>
-									<tr>
-										<td><a href="#">Juli</a></td>
-										<td><a href="#">August</a></td>
-										<td><a href="#">September</a></td>
-									</tr>
-									<tr>
-										<td><a href="#">Oktober</a></td>
-										<td><a href="#">November</a></td>
-										<td><a href="#">Dezember</a></td>
-									</tr>
-									</tbody>
-								</table>
-								<table class="table table-condensed "
-								       style="text-align: center;">
-									<thead>
-									<tr>
-										<th colspan="3">
-											<a class="year-toggle"
-											   data-toggle="collapse"
-											   data-parent="#archive"
-											   data-target="#year_2013">2013</a>
-										</th>
-									</tr>
-									</thead>
-									<tbody id="year_2013" class="collapse">
-									<tr>
-										<td><a href="#">Januar</a></td>
-										<td><a href="#">Februar</a></td>
-										<td><a href="#">März</a></td>
-									</tr>
-									<tr>
-										<td><a href="#">April</a></td>
-										<td><a href="#">Mai</a></td>
-										<td><a href="#">Juni</a></td>
-									</tr>
-									<tr>
-										<td><a href="#">Juli</a></td>
-										<td><a href="#">August</a></td>
-										<td><a href="#">September</a></td>
-									</tr>
-									<tr>
-										<td><a href="#">Oktober</a></td>
-										<td><a href="#">November</a></td>
-										<td><a href="#">Dezember</a></td>
-									</tr>
-									</tbody>
-								</table>
-							</div>
-						</li>
 					</ul>
 				</div>
 				<!-- /.navbar-collapse -->
@@ -134,99 +54,52 @@
 		</nav>
 
 		<div class="page-header">
-			<h1>{{ page.title }}</h1>
+			<h3>{{ page.title }}</h3>
 		</div>
+
+		<ul class="pager">
+			{% if page.previous.url %}
+			<li class="previous"><a href="{{page.previous.url}}"
+			                        title="{{page.previous.title}}">&laquo;
+				{{page.previous.title}}</a></li>
+			{% endif %}
+			{% if page.next.url %}
+			<li class="next"><a href="{{page.next.url}}"
+			                    title="{{page.next.title}}">{{page.next.title}} &raquo; </a>
+			</li>
+			{% endif %}
+		</ul>
 	</div>
 </div>
 
 <div class="row">
 	<div class="col-md-offset-3 col-md-1">
-		<div class="panel-group" id="accordion">
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h4 class="panel-title">
-						<a data-toggle="collapse" data-parent="#accordion"
-						   href="#collapseOne">
-							2014
-						</a>
-					</h4>
-				</div>
-				<div id="collapseOne" class="panel-collapse collapse">
-					<div class="panel-body btn-group-vertical">
+		<div id="archive">
+			<div class="list-group panel panel-default">
+				{% for year in (2005..2014) reversed %}
+				<button type="button" class="list-group-item panel-heading"
+				        data-parent="#archive" data-toggle="collapse"
+				        data-target="#archive-{{ year }}">
+					{{ year }}
+					<span class="caret"></span>
+				</button>
 
-						<a class="btn btn-default" href="#">Januar</a>
-						<a class="btn btn-default" href="#">Februar</a>
-						<a class="btn btn-default" href="#">März</a>
-						<a class="btn btn-default" href="#">April</a>
-						<a class="btn btn-default" href="#">Mai</a>
-						<a class="btn btn-default" href="#">Juni</a>
-						<a class="btn btn-default" href="#">Juli</a>
-						<a class="btn btn-default" href="#">August</a>
-						<a class="btn btn-default" href="#">September</a>
-						<a class="btn btn-default" href="#">Oktober</a>
-						<a class="btn btn-default" href="#">November</a>
-						<a class="btn btn-default" href="#">Dezember</a></div>
+				<div id="archive-{{ year }}" class="list-group collapse">
+					<a class="list-group-item" href="#">Januar</a>
+					<a class="list-group-item" href="#">Februar</a>
+					<a class="list-group-item" href="#">März</a>
+					<a class="list-group-item" href="#">April</a>
+					<a class="list-group-item" href="#">Mai</a>
+					<a class="list-group-item" href="#">Juni</a>
+					<a class="list-group-item" href="#">Juli</a>
+					<a class="list-group-item" href="#">August</a>
+					<a class="list-group-item" href="#">September</a>
+					<a class="list-group-item" href="#">Oktober</a>
+					<a class="list-group-item" href="#">November</a>
+					<a class="list-group-item" href="#">Dezember</a>
 				</div>
+				{% endfor %}
 			</div>
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h4 class="panel-title">
-						<a data-toggle="collapse" data-parent="#accordion"
-						   href="#collapseTwo">
-							2013
-						</a>
-					</h4>
-				</div>
-				<div id="collapseTwo" class="panel-collapse collapse">
-
-					<ul class="panel-body nav nav-pills small">
-
-						<li><a href="#">Januar</a></li>
-						<li><a href="#">Februar</a></li>
-						<li><a href="#">März</a></li>
-						<li><a href="#">April</a></li>
-						<li><a href="#">Mai</a></li>
-						<li><a href="#">Juni</a></li>
-						<li><a href="#">Juli</a></li>
-						<li><a href="#">August</a></li>
-						<li><a href="#">September</a></li>
-						<li><a href="#">Oktober</a></li>
-						<li><a href="#">November</a></li>
-						<li><a href="#">Dezember</a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h4 class="panel-title">
-						<a data-toggle="collapse" data-parent="#accordion"
-						   href="#collapseThree">
-							2012
-						</a>
-					</h4>
-				</div>
-				<div id="collapseThree" class="panel-collapse collapse">
-
-					<ul class="panel-body list-group">
-						<li class="list-group-item"><a href="#">Januar</a></li>
-						<li class="list-group-item"><a href="#">Februar</a></li>
-						<li class="list-group-item"><a href="#">März</a></li>
-						<li class="list-group-item"><a href="#">April</a></li>
-						<li class="list-group-item"><a href="#">Mai</a></li>
-						<li class="list-group-item"><a href="#">Juni</a></li>
-						<li class="list-group-item"><a href="#">Juli</a></li>
-						<li class="list-group-item"><a href="#">August</a></li>
-						<li class="list-group-item"><a href="#">September</a>
-						</li>
-						<li class="list-group-item"><a href="#">Oktober</a></li>
-						<li class="list-group-item"><a href="#">November</a>
-						</li>
-						<li class="list-group-item"><a href="#">Dezember</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-
 		</div>
 	</div>
 
@@ -235,92 +108,30 @@
 
 		<!-- Begin page content -->
 		<div class="container">
-			<img src="http://www.fonflatter.de/2006/fred_2006-09-14_s.jpg" title="{{ page.mouseover }}" />
+			{% assign iso_date = page.date | date_to_xmlschema | split: 'T' | first %}
+			{% assign year = iso_date | split: '-' | first %}
+
+			<p>
+				<a href="http://www.fonflatter.de/{{ year }}/fred_{{ iso_date }}.png">
+					<img src="http://www.fonflatter.de/{{ year }}/fred_{{ iso_date }}_s.png"
+					     title="{{ page.mouseover }}"/>
+				</a>
+			</p>
+
 			{{ content }}
 			<div class="share"></div>
 		</div>
 
-	</div>
-
-	<form class="col-md-2" role="search">
-		<div class="form-group">
-			<input type="text" class="form-control"
-			       placeholder="Search">
-		</div>
-		<button type="submit" class="btn btn-default">Submit
-		</button>
-	</form>
-</div>
-
-<div class="row">
-
-	<div class="col-md-offset-2 col-md-2">
-		<div class="panel-group" id="accordion2">
-
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h4 class="panel-title">
-						<a data-toggle="collapse" data-parent="#accordion2"
-						   href="#collapseFour">
-							2011
-						</a>
-					</h4>
-				</div>
-				<div id="collapseFour" class="panel-collapse collapse">
-					<table class="panel-body table table-condensed small"
-					       style="text-align: center;">
-						<tr>
-							<td><a href="#">Januar</a></td>
-							<td><a href="#">Februar</a></td>
-							<td><a href="#">März</a></td>
-						</tr>
-						<tr>
-							<td><a href="#">April</a></td>
-							<td><a href="#">Mai</a></td>
-							<td><a href="#">Juni</a></td>
-						</tr>
-						<tr>
-							<td><a href="#">Juli</a></td>
-							<td><a href="#">August</a></td>
-							<td><a href="#">September</a></td>
-						</tr>
-						<tr>
-							<td><a href="#">Oktober</a></td>
-							<td><a href="#">November</a></td>
-							<td><a href="#">Dezember</a></td>
-						</tr>
-					</table>
-				</div>
-			</div>
-		</div>
-	</div>
-	
-	<div class="col-md-4">
-		<nav class="navbar navbar-default" role="navigation">
-			<div class="container-fluid">
-				<ul class="nav navbar-nav">
-					<li><a href="#"><span
-							class="glyphicon glyphicon-shopping-cart"></span>
-						Fredshop</a></li>
-					<li><a href="#"><span
-							class="glyphicon glyphicon-gift"></span>
-						Geschenke</a></li>
-					<li><a href="#"><span
-							class="glyphicon glyphicon-envelope"></span>
-						Post</a></li>
-				</ul>
-			</div>
-		</nav>
 	</div>
 </div>
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
 <script type="text/javascript"
-        src="js/jquery.socialshareprivacy.min.js"></script>
+        src="/js/jquery.socialshareprivacy.min.js"></script>
 
 <script type="text/javascript">
 	$(document).ready(function () {

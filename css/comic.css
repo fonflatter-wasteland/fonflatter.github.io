@@ -1,0 +1,57 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+body > .container {
+  padding: 60px 15px 0;
+}
+.container .text-muted {
+  margin: 20px 0;
+}
+
+code {
+  font-size: 80%;
+}
+
+.social_share_privacy_area {
+    margin-top: 2em;
+}
+
+.social_share_privacy_area.line li.help_info.buffer,
+.social_share_privacy_area.line li.help_info.delicious,
+.social_share_privacy_area.line li.help_info.disqus,
+.social_share_privacy_area.line li.help_info.flattr,
+.social_share_privacy_area.line li.help_info.hackernews,
+.social_share_privacy_area.line li.help_info.linkedin,
+.social_share_privacy_area.line li.help_info.mail,
+.social_share_privacy_area.line li.help_info.pinterest,
+.social_share_privacy_area.line li.help_info.reddit,
+.social_share_privacy_area.line li.help_info.stumbleupon,
+.social_share_privacy_area.line li.help_info.tumblr,
+.social_share_privacy_area.line li.help_info.xing
+{
+    display: none;
+}
+
+#archive .panel-heading {
+    width: 100%;
+}
