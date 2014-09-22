@@ -105,21 +105,17 @@
 
 
 	<div class="col-md-offset-0 col-md-4">
+		{% assign iso_date = page.date | date_to_xmlschema | split: 'T' | first %}
+		{% assign year = iso_date | split: '-' | first %}
 
-		<!-- Begin page content -->
-		<div class="container">
-			{% assign iso_date = page.date | date_to_xmlschema | split: 'T' | first %}
-			{% assign year = iso_date | split: '-' | first %}
+		<a href="http://www.fonflatter.de/{{ year }}/fred_{{ iso_date }}.png">
+			<img src="http://www.fonflatter.de/{{ year }}/fred_{{ iso_date }}.png"
+			     title="{{ page.mouseover }}"/>
+		</a>
 
-			<a href="http://www.fonflatter.de/{{ year }}/fred_{{ iso_date }}.png">
-				<img src="http://www.fonflatter.de/{{ year }}/fred_{{ iso_date }}.png"
-				     title="{{ page.mouseover }}"/>
-			</a>
+		{{ content }}
 
-			{{ content }}
-			<div class="share"></div>
-		</div>
-
+		<div class="share"></div>
 	</div>
 </div>
 
