@@ -111,12 +111,10 @@
 			{% assign iso_date = page.date | date_to_xmlschema | split: 'T' | first %}
 			{% assign year = iso_date | split: '-' | first %}
 
-			<p>
-				<a href="http://www.fonflatter.de/{{ year }}/fred_{{ iso_date }}.png">
-					<img src="http://www.fonflatter.de/{{ year }}/fred_{{ iso_date }}.png"
-					     title="{{ page.mouseover }}"/>
-				</a>
-			</p>
+			<a href="http://www.fonflatter.de/{{ year }}/fred_{{ iso_date }}.png">
+				<img src="http://www.fonflatter.de/{{ year }}/fred_{{ iso_date }}.png"
+				     title="{{ page.mouseover }}"/>
+			</a>
 
 			{{ content }}
 			<div class="share"></div>
