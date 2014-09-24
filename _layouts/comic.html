@@ -5,112 +5,33 @@
 
 	<title>{{ site.title }} - {{ page.title }}</title>
 
-	<!-- Bootstrap core CSS -->
-	<link href="/css/bootstrap.min.css" rel="stylesheet"/>
-
-	<link href="/css/jquery.socialshareprivacy.min.css" rel="stylesheet"/>
-
-	<!-- Custom styles for this template -->
-	<link href="/css/comic.css" rel="stylesheet"/>
+	<link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css"/>
+	<link rel="stylesheet" href="/css/jquery.socialshareprivacy.min.css"
+	      type="text/css"/>
+	<link rel="stylesheet" href="/css/comic.css" type="text/css"/>
 </head>
 
 <body>
 
 <div class="row">
 	<div class="col-md-4 col-md-offset-4">
-		<nav class="navbar navbar-default" role="navigation">
-			<div class="container-fluid">
-
-				<!-- Brand and toggle get grouped for better mobile display -->
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed"
-					        data-toggle="collapse"
-					        data-target="#bs-example-navbar-collapse-1">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-				</div>
-
-				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="collapse navbar-collapse"
-				     id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-nav">
-						<li><a href="#"><span
-								class="glyphicon glyphicon-shopping-cart"></span>
-							Fredshop</a></li>
-						<li><a href="#"><span
-								class="glyphicon glyphicon-gift"></span>
-							Geschenke</a></li>
-						<li><a href="#"><span
-								class="glyphicon glyphicon-envelope"></span>
-							Post</a></li>
-					</ul>
-				</div>
-				<!-- /.navbar-collapse -->
-			</div>
-			<!-- /.container-fluid -->
-		</nav>
-
-		<div class="page-header">
-			<h3>{{ page.title }}</h3>
-		</div>
-
-		<ul class="pager">
-			{% if page.previous.url %}
-			<li class="previous"><a href="{{page.previous.url}}"
-			                        title="{{page.previous.title}}">&laquo;
-				{{page.previous.title}}</a></li>
-			{% endif %}
-			{% if page.next.url %}
-			<li class="next"><a href="{{page.next.url}}"
-			                    title="{{page.next.title}}">{{page.next.title}} &raquo; </a>
-			</li>
-			{% endif %}
-		</ul>
+		{% include menu_top.html %}
+		{% include page_header.html %}
 	</div>
 </div>
 
 <div class="row">
 	<div class="col-md-offset-3 col-md-1">
-		<div id="archive">
-			<div class="list-group panel panel-default">
-				{% for year in (2005..2014) reversed %}
-				<button type="button" class="list-group-item panel-heading"
-				        data-parent="#archive" data-toggle="collapse"
-				        data-target="#archive-{{ year }}">
-					{{ year }}
-					<span class="caret"></span>
-				</button>
-
-				<div id="archive-{{ year }}" class="list-group collapse">
-					<a class="list-group-item" href="#">Januar</a>
-					<a class="list-group-item" href="#">Februar</a>
-					<a class="list-group-item" href="#">März</a>
-					<a class="list-group-item" href="#">April</a>
-					<a class="list-group-item" href="#">Mai</a>
-					<a class="list-group-item" href="#">Juni</a>
-					<a class="list-group-item" href="#">Juli</a>
-					<a class="list-group-item" href="#">August</a>
-					<a class="list-group-item" href="#">September</a>
-					<a class="list-group-item" href="#">Oktober</a>
-					<a class="list-group-item" href="#">November</a>
-					<a class="list-group-item" href="#">Dezember</a>
-				</div>
-				{% endfor %}
-			</div>
-		</div>
+		{% include menu_archive.html %}
 	</div>
-
 
 	<div class="col-md-offset-0 col-md-4">
 		{% assign iso_date = page.date | date_to_xmlschema | split: 'T' | first %}
 		{% assign year = iso_date | split: '-' | first %}
+		{% assign img_url = 'http://www.fonflatter.de/' | append: year | append: '/fred_' | append: iso_date | append: '.png' %}
 
-		<a href="http://www.fonflatter.de/{{ year }}/fred_{{ iso_date }}.png">
-			<img src="http://www.fonflatter.de/{{ year }}/fred_{{ iso_date }}.png"
-			     title="{{ page.mouseover }}"/>
+		<a href="{{ img_url }}">
+			<img src="{{ img_url }}" title="{{ page.mouseover }}"/>
 		</a>
 
 		{{ content }}
@@ -119,9 +40,6 @@
 	</div>
 </div>
 
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
 <script type="text/javascript" src="/js/jquery.min.js"></script>
 <script type="text/javascript" src="/js/bootstrap.min.js"></script>
 <script type="text/javascript"
@@ -130,12 +48,6 @@
 <script type="text/javascript">
 	$(document).ready(function () {
 		$('.share').socialSharePrivacy();
-	});
-
-	$(".year-toggle").mouseover(function () {
-		var target;
-		target = $(this).data('target');
-		$(target).collapse('show');
 	});
 </script>
 

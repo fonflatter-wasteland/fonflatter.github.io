@@ -1,0 +1,27 @@
+<div id="archive">
+	<div class="list-group panel panel-default">
+		{% for year in (2005..2014) reversed %}
+		<button type="button" class="list-group-item panel-heading"
+		        data-parent="#archive" data-toggle="collapse"
+		        data-target="#archive_{{ year }}">
+			{{ year }}
+			<span class="caret"></span>
+		</button>
+
+		<div id="archive_{{ year }}" class="list-group collapse">
+			<a class="list-group-item" href="#">Januar</a>
+			<a class="list-group-item" href="#">Februar</a>
+			<a class="list-group-item" href="#">März</a>
+			<a class="list-group-item" href="#">April</a>
+			<a class="list-group-item" href="#">Mai</a>
+			<a class="list-group-item" href="#">Juni</a>
+			<a class="list-group-item" href="#">Juli</a>
+			<a class="list-group-item" href="#">August</a>
+			<a class="list-group-item" href="#">September</a>
+			<a class="list-group-item" href="#">Oktober</a>
+			<a class="list-group-item" href="#">November</a>
+			<a class="list-group-item" href="#">Dezember</a>
+		</div>
+		{% endfor %}
+	</div>
+</div>
