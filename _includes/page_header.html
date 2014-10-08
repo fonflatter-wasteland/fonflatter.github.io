@@ -1,16 +1,29 @@
 <div class="page-header">
-	<h3>{{ page.title }} <small class="pull-right">{{ iso_date }}</small></h3>
+	<h3>{{ page.title }}
+		<small class="pull-right">{{ iso_date }}</small>
+	</h3>
 </div>
 
+{% assign num_posts = site.posts | size %}
+{% assign p = page.previous %}
+{% for i in (1..num_posts) %}
+{% if p.categories contains lang %}{% assign prev = p %}{% break %}
+{% else %}{% assign p = p.previous %}{% endif %}
+{% endfor %}
+{% assign p = page.next %}
+{% for i in (1..num_posts) %}
+{% if p.categories contains lang %}{% assign next = p %}{% break %}
+{% else %}{% assign p = p.next %}{% endif %}
+{% endfor %}
 <ul class="pager">
-	{% if page.previous.url %}
-	<li class="previous"><a href="{{ page.previous.url }}"
-	                        title="{{ page.previous.title }}">&laquo;
-		{{ page.previous.title }}</a></li>
+	{% if prev.url %}
+	<li class="previous"><a href="{{ prev.url }}"
+	                        title="{{ prev.title }}">&laquo;
+		{{ prev.title }}</a></li>
 	{% endif %}
-	{% if page.next.url %}
-	<li class="next"><a href="{{ page.next.url }}"
-	                    title="{{ page.next.title }}">{{ page.next.title }}
+	{% if next.url %}
+	<li class="next"><a href="{{ next.url }}"
+	                    title="{{ next.title }}">{{ next.title }}
 		&raquo; </a>
 	</li>
 	{% endif %}
