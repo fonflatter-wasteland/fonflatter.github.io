@@ -28,7 +28,11 @@
 	<div class="col-md-offset-0 col-md-4">
 		{% assign iso_date = page.date | date_to_xmlschema | split: 'T' | first %}
 		{% assign year = iso_date | split: '-' | first %}
-		{% assign img_url = 'http://www.fonflatter.de/' | append: year | append: '/fred_' | append: iso_date | append: '.png' %}
+		{% assign base_url = 'http://www.fonflatter.de/' | append: year  %}
+                {% if page.categories contains 'en' %}
+		{% assign base_url = base_url | append: 'e' %}
+		{% endif %}
+		{% assign img_url = base_url | append: '/fred_' | append: iso_date | append: '.png' %}
 
 		<a href="{{ img_url }}">
 			<img src="{{ img_url }}" title="{{ page.mouseover }}"/>
