@@ -7,8 +7,6 @@
 	<title>{{ site.title }} - {{ page.title }}</title>
 
 	<link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css"/>
-	<link rel="stylesheet" href="/css/jquery.socialshareprivacy.min.css"
-	      type="text/css"/>
 	<link rel="stylesheet" href="/css/comic.css" type="text/css"/>
 </head>
 
@@ -42,20 +40,27 @@
 
 		{{ content }}
 
-		<div class="share"></div>
+		<div id="share" class="text-center">
+			<div class="btn-group">
+				{% assign share_url = site.url | append: page.url %}
+				<a class="btn btn-default disabled"><span
+						class="glyphicon glyphicon-share-alt"></span></a>
+				<a class="btn btn-default" role="button"
+				   href="https://www.facebook.com/sharer/sharer.php?u={{ share_url }}"><img
+						src="https://icons.duckduckgo.com/ip2/facebook.com.ico"/></a>
+				<a class="btn btn-default" role="button"
+				   href="https://twitter.com/share?url={{ share_url }}"><img
+						src="https://icons.duckduckgo.com/ip2/twitter.com.ico"/></a>
+				<a class="btn btn-default" role="button"
+				   href="https://plus.google.com/share?url={{ share_url }}"><img
+						src="https://icons.duckduckgo.com/ip2/plus.google.com.ico"/></a>
+			</div>
+		</div>
 	</div>
 </div>
 
 <script type="text/javascript" src="/js/jquery.min.js"></script>
 <script type="text/javascript" src="/js/bootstrap.min.js"></script>
-<script type="text/javascript"
-        src="/js/jquery.socialshareprivacy.min.js"></script>
-
-<script type="text/javascript">
-	$(document).ready(function () {
-		$('.share').socialSharePrivacy();
-	});
-</script>
 
 </body>
 </html>
