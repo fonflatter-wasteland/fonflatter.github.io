@@ -1,0 +1,5 @@
+{% for language in site.languages %}
+{% if page.categories contains language %}
+{% assign lang = language %}
+{% endif %}
+{% endfor %}

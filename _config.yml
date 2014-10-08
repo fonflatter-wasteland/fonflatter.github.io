@@ -1,3 +1,6 @@
 title: fonflatter.de
 permalink: /:categories/:year/:month/:day/:title/
 url: https://www.fonflatter.de
+languages:
+  - de
+  - en

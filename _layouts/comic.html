@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+	{% include i18n.html %}
 	{% assign iso_date = page.date | date_to_xmlschema | split: 'T' | first %}
 	<meta charset="utf-8"/>
 
