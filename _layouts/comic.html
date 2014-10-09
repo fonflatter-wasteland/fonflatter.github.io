@@ -62,7 +62,7 @@
 			{% for comment in site.comments %}
 			{% assign page_path = comment.relative_path | replace_first: '_comments/', '' %}
 			{% if page.path == page_path %}
-			{{ comment.content | newline_to_br }}
+			{{ comment.content }}
 			{% break %}
 			{% endif %}
 			{% endfor %}
