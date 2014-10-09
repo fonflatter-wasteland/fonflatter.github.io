@@ -1,0 +1,4 @@
+[submodule "comments"]
+	path = _comments
+	url = git@github.com:fonflatter/comments.git
+	branch = master

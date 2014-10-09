@@ -4,3 +4,6 @@ url: https://www.fonflatter.de
 languages:
   - de
   - en
+collections:
+  comments:
+    output: false
