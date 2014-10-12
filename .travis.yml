@@ -2,3 +2,4 @@ language: ruby
 script: "bundle exec jekyll build"
 after_script:
   - find _site/
+  - 'find _site/{de,en}/ -type f -exec echo {}: \; -exec cat {} \; -exec echo -e "\n\n" \;'
